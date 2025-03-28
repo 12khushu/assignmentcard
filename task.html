@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing UI</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    
+    <div class="pricing-container">
+        <header class="heading">YAY! It's BOGO</header>
+        <div class="option" onclick="swapPosition(this)">
+            <input type="radio" name="units" id="unit1">
+            <label for="unit1">
+                <span class="discount">10% Off</span>
+                <p>1 Unit</p>
+                <p class="price">$10.00 USD <span class="old-price">$24.00 USD</span></p>
+            </label>
+        </div>
+        
+        <div class="option popular" onclick="swapPosition(this)">
+            <span class="badge">Most Popular</span>
+            <input type="radio" name="units" id="unit2">
+            <label for="unit2">
+                <span class="discount">20% Off</span>
+                <p>2 Units</p>
+                <p class="price">$18.00 USD <span class="old-price">$24.00 USD</span></p>
+                <div class="customization">
+                    <label>Size: 
+                        <select>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                    </label>
+                    <label>Color: 
+                        <select>
+                            <option>Black</option>
+                            <option>White</option>
+                            <option>Blue</option>
+                        </select>
+                    </label>
+                </div>
+            </label>
+        </div>
+        
+        <div class="option" onclick="swapPosition(this)">
+            <input type="radio" name="units" id="unit3">
+            <label for="unit3">
+                <span class="discount">30% Off</span>
+                <p>3 Units</p>
+                <p class="price">$24.00 USD <span class="old-price">$24.00 USD</span></p>
+            </label>
+        </div>
+        
+        <p class="free-delivery">Free Delivery</p>
+        <p class="total">Total: <span id="total-price">$18.00 USD</span></p>
+        <button class="add-to-cart">+ Add to Cart</button>
+    </div>
+    <script>
+    function swapPosition(selectedOption) {
+            let option = selectedOption.closest('.option');
+            let container = document.querySelector(".pricing-container");
+
+            if (!container) return;
+
+            let firstOption = container.querySelector(".option");
+            
+            if (option !== firstOption) {
+                container.insertBefore(option, firstOption);
+            }
+        }
+
+
+    </script>
+</body>
+</html>
